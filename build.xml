@@ -1,0 +1,15 @@
+<project name="ebay" default="war">
+<target name="compile">
+<mkdir dir="classes"/>
+<javac srcdir="src" destdir="classes"/>
+</target>
+<target name="package" depends="compile">
+<mkdir dir="jar"/>
+<jar basedir="classes" destfile="jar/ebay.jar"/>
+</target>
+<target name="war" depends="package">
+<mkdir dir="target"/>
+<war basedir="jar" needxmlfile="false" destfile="target/ebay.war"/>
+</target>
+</project>
+
